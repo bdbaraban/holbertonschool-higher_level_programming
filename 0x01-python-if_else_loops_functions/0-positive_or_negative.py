@@ -2,7 +2,6 @@
 # 0-positive_or_negative.py
 # Brennan D Baraban <375@holbertonschool.com>
 
-
 """Generate a random number and print whether it is positive or negative."""
 import random
 number = random.randint(-10, 10)

@@ -2,7 +2,6 @@
 # 1-last_digit.py
 # Brennan D Baraban
 
-
 """Generate a random number and print the value of its last digit."""
 import random
 number = random.randint(-10000, 10000)
