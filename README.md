@@ -3,6 +3,7 @@
 This repository contains programs written for the higher-level programming track at Holberton School. In these projects, which occurred during months four through six of the year one curriculum, I was introduced to Python. Simultaneously, I continued to reinforce and expand my skills in C and shell scripting. The specific list of projects contained follows:
 
 * 0x00. Python - Hello, World
+* 0x01. Python - if/else, loops, functions
 
 ## Author
 * **Brennan D Baraban** <[bdbaraban](https://github.com/bdbaraban)> - Holberton School student
