@@ -102,7 +102,7 @@ Prototypes for functions written in this project:
   * If the function fails, returns `NULL`.
   * Otherwise, returns the address of the new node.
   * Helper files:
-    * `linked_lists.c`: C functions handling linked lists for testing `10-check_cycle.c` (provided by Holberton School).
+    * `linked_lists.c`: C functions handling linked lists for testing `13-insert_number.c` (provided by Holberton School).
     * `lists.h`: Header file containing definitions and prototypes for all types and functions used in `linked_lists.c` and `13-insert_number.c`.
 
 * **Smile in the mirror**
