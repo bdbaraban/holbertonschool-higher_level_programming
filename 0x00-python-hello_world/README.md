@@ -2,18 +2,13 @@
 
 In this project, I began practicing using the interpreter, printing text and variables, and indexing and slicing strings in Python.
 
-## Helper Files
-* `10-linked_lists.c`: C functions handling singly-linked lists for testing `10-check_cycle.c`.
-  * Provided by Holberton School.
+## Function Prototypes
+Prototypes for functions written in this project:
 
-* `lists.h`: Header file containing definitions and prototypes for all types and functions written for file `10-check_cycle.c`.
-
-| File/Type           | Definition/Prototype                                                                                                                                                         |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `struct listint_s`  | <ul><li>`int n`</li><li>`struct listint_s *next`</li></ul>                                                                                                                   |
-| `typedef listint_t` | `struct listint_s`                                                                                                                                                           |
-| `10-linked_lists.c` | <ul><li>`size_t print_listint(const listint_t *h);`</li><li>`listint_t *add_nodeint(listint_t **head, const int n);`</li><li>`void free_listint(listint_t *head);`</li></ul> |
-| `10-check_cycle.c`  | `int check_cycle(listint_t *list);`                                                                                                                                          |
+| File                       | Prototype                             |
+| -------------------------- | ------------------------------------- |
+| `10-check_cycle.c`         | `int check_cycle(listint_t *list);`   |
+| `102-magic_calculation.py` | `def magic_calculation(a, b):`        |
 
 ## Tasks
 * **Run Python File**
@@ -58,6 +53,9 @@ In this project, I began practicing using the interpreter, printing text and var
 * **Linked list cycle**
   * `10-check_cycle.c`: C function that checks if a linked list contains a cycle.
   * Returns `0` if there is no cycle and `1` if there is.
+  * Helper files:
+    * `linked_lists.c`: C functions handling linked lists for testing `10-check_cycle.c` (provided by Holberton School).
+    * `lists.h`: Header file containing definitions and prototypes for all types and functions used in `linked_lists.c` and `10-check_cycle.c`.
 
 * **Hello, write**
   * `100-write.py`: Python script that prints exactly `and that piece of art is useful - Dora Korpar, 2015-10-19`, followed by a new line to `stderr` using the function `write` from the `sys` module.
@@ -65,3 +63,6 @@ In this project, I began practicing using the interpreter, printing text and var
 
 * **Compile**
   * `101-compile`: Python script that compiles a Python script file stored in the environment variable `$PYFILE` and saves it to an output file `$PYFILEc` (ex. `export PYFILE=my_main.py` => output filename: `my_main.pyc`).
+
+* **ByteCode -> Python #1**
+  * `102-magic_calculation.py`: Python function matching exactly a bytecode provided by Holberton School.
