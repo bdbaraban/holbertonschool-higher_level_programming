@@ -5,22 +5,33 @@
 
 #include "lists.h"
 
-listint_t *get_node_at_index(listint_t *head, unsigned int index);
+int recursive_is_palindrome(listint_t *h, size_t size);
 int is_palindrome(listint_t **head);
 
 /**
- * get_node_at_index - Locates a given node in a singly linked list.
- * @head: The head of the linked list.
- * @index: The index of the node to locate.
+ * recursive_is_palindrome - Recursively checks if a singly-linked
+ *                           list is a palindrome.
+ * @h: The head of the singly-linked list.
+ * @size: The size of the singly linked list.
  *
- * Return: The address of the located node.
+ * Return: If the linked list is not a palindrome - 0.
+ *         If the linked list is a palindrome - 1.
  */
-listint_t *get_node_at_index(listint_t *head, unsigned int index)
+int recursive_is_palindrome(listint_t *h, size_t size)
 {
-	for (; index != 0; index--)
-		head = head->next;
+	listint_t *tmp = h;
+	size_t i;
 
-	return (head);
+	for (i = 0; i < size; i++)
+		tmp = tmp->next;
+
+	if (h == tmp || h->next == tmp)
+		return (1);
+
+	if (h->n != tmp->n)
+		return (0);
+
+	return (recursive_is_palindrome(h->next, size - 2));
 }
 
 /**
@@ -32,8 +43,8 @@ listint_t *get_node_at_index(listint_t *head, unsigned int index)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp, *h;
-	unsigned int nodes = 0, i;
+	listint_t *tmp;
+	size_t size = 0;
 
 	if (*head == NULL)
 		return (1);
@@ -41,18 +52,9 @@ int is_palindrome(listint_t **head)
 	tmp = *head;
 	while (tmp->next)
 	{
-		nodes++;
+		size++;
 		tmp = tmp->next;
 	}
 
-	h = *head;
-	for (i = 0; i < (nodes / 2); i++)
-	{
-		tmp = get_node_at_index(*head, nodes - i);
-		if (h->n != tmp->n)
-			return (0);
-		h = h->next;
-	}
-
-	return (1);
+	return (recursive_is_palindrome(*head, size));
 }
