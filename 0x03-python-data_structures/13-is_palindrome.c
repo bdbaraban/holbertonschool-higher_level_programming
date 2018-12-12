@@ -5,34 +5,53 @@
 
 #include "lists.h"
 
-int recursive_is_palindrome(listint_t *head, listint_t *check, size_t idx);
+listint_t *add_nodeint_beginning(listint_t **head, const int n);
+listint_t *reverse_listint(listint_t *node);
 int is_palindrome(listint_t **head);
 
 /**
- * recursive_is_palindrome - Recursively checks if a singly-linked
- *                           list is a palindrome.
- * @head: The head of the singly-linked list.
- * @check: The next node of the list to compare.
- * @idx: The indexed node from head to compare to check.
+ * add_nodeint_beginning - Adds a new node at the beginning
+ *                         of a linstint_t linked list.
+ * @head: A pointer to the head of the listint_t list.
+ * @n: The value for the new node to contain.
  *
- * Return: If the linked list is not a palindrome - 0.
- *         If the linked list is a palindrome - 1.
+ * Return: If the function fails - NULL.
+ *         Otherwise - the address of the new node.
  */
-int recursive_is_palindrome(listint_t *head, listint_t *check, size_t idx)
+listint_t *add_nodeint_beginning(listint_t **head, const int n)
 {
-	listint_t *tmp = head;
-	size_t i;
+	listint_t *new;
 
-	if (idx == 0)
-		return (1);
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
 
-	for (i = 0; i < idx; i++)
-		tmp = tmp->next;
+	new->n = n;
+	new->next = *head;
 
-	if (tmp->n != check->n)
-		return (0);
+	return (new);
+}
 
-	return (recursive_is_palindrome(head, check->next, idx - 1));
+/**
+ * reverse_listint - Reverses a singly-linked listint_t list.
+ * @node: The starting node of the list to reverse.
+ *
+ * Return: If the function fails - NULL.
+ *         Otherwise - a pointer to the head of the reversed list.
+ */
+listint_t *reverse_listint(listint_t *node)
+{
+	listint_t *new = NULL, *h = new;
+
+	while (node)
+	{
+		h = add_nodeint_beginning(&h, node->n);
+		if (h == NULL)
+			return (NULL);
+		node = node->next;
+	}
+
+	return (h);
 }
 
 /**
@@ -44,7 +63,7 @@ int recursive_is_palindrome(listint_t *head, listint_t *check, size_t idx)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp;
+	listint_t *tmp, *reverse;
 	size_t size = 0, i;
 
 	if (*head == NULL)
@@ -64,12 +83,18 @@ int is_palindrome(listint_t **head)
 	if ((size % 2) == 0 && tmp->n != tmp->next->n)
 		return (0);
 
-	if ((size % 2) != 0)
-		size = (size / 2) - 1;
-	else
-		size = (size / 2) - 2;
-
 	tmp = tmp->next->next;
+	reverse = reverse_listint(tmp);
 
-	return (recursive_is_palindrome(*head, tmp, size));
+	while (reverse)
+	{
+		if ((*head)->n != reverse->n)
+			return (0);
+		*head = (*head)->next;
+		reverse = reverse->next;
+	}
+
+	free(reverse);
+
+	return (1);
 }
