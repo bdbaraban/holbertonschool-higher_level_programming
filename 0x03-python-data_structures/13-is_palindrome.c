@@ -41,13 +41,16 @@ listint_t *add_nodeint_beginning(listint_t **head, const int n)
  */
 listint_t *reverse_listint(listint_t *node)
 {
-	listint_t *new = NULL, *h = new;
+	listint_t *h = NULL;
 
 	while (node)
 	{
 		h = add_nodeint_beginning(&h, node->n);
 		if (h == NULL)
+		{
+			free_listint(h);
 			return (NULL);
+		}
 		node = node->next;
 	}
 
@@ -63,7 +66,7 @@ listint_t *reverse_listint(listint_t *node)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *tmp, *reverse;
+	listint_t *tmp, *reverse, *r;
 	size_t size = 0, i;
 
 	if (*head == NULL)
@@ -85,16 +88,21 @@ int is_palindrome(listint_t **head)
 
 	tmp = tmp->next->next;
 	reverse = reverse_listint(tmp);
+	r = reverse;
 
+	tmp = *head;
 	while (reverse)
 	{
-		if ((*head)->n != reverse->n)
+		if (tmp->n != reverse->n)
+		{
+			free_listint(r);
 			return (0);
-		*head = (*head)->next;
+		}
+		tmp = tmp->next;
 		reverse = reverse->next;
 	}
 
-	free(reverse);
+	free_listint(r);
 
 	return (1);
 }
