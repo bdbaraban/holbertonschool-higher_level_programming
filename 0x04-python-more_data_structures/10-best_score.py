@@ -8,8 +8,9 @@ def best_score(a_dictionary):
     if not isinstance(a_dictionary, dict):
         return None
 
-    x = 0
+    big = list(a_dictionary.values())[0]
+    ret = list(a_dictionary.keys())[0]
     for key in a_dictionary:
-        if a_dictionary[key] > x:
+        if a_dictionary[key] > big:
             ret = key
     return (key)
