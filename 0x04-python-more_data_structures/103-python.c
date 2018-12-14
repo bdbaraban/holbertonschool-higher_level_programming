@@ -1,0 +1,63 @@
+/*
+ * File: 103-python.c
+ * Auth: Brennan D Baraban
+ */
+
+#include <Python.h>
+
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
+
+/**
+ * print_python_list - Prints basic info about Python lists.
+ * @p: A PyObject list object.
+ */
+void print_python_list(PyObject *p)
+{
+	int size, alloc, i;
+	PyListObject *list = (PyListObject *)p;
+	PyVarObject *var = (PyVarObject *)p;
+
+	size = var->ob_size;
+	alloc = list->allocated;
+
+	printf("[*] Python list info\n");
+	printf("[*] Size of the Python List = %d\n", size);
+	printf("[*] Allocated = %d\n", alloc);
+
+	for (i = 0; i < size; i++)
+	{
+		printf("Element %d: %s\n",
+		       i, list->ob_item[i]->ob_type->tp_name);
+	}
+}
+
+/**
+ * print_python_bytes - Prints basic info about Python byte objects.
+ * @p: A PyObject byte object.
+ */
+void print_python_bytes(PyObject *p)
+{
+	unsigned char i;
+	PyBytesObject *bytes = (PyBytesObject *)p;
+
+	printf("[.] bytes object info\n");
+	if (bytes->ob_sval[0] == 1)
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
+
+	printf("  size: %ld\n", ((PyVarObject *)p)->ob_size);
+	printf("  trying string: %s\n", bytes->ob_sval);
+
+	printf("  first 6 bytes: ");
+	for (i = 0; i < 6; i++)
+	{
+		printf("%02hhx", bytes->ob_sval[i]);
+		if (i == 5)
+			printf("\n");
+		else
+			printf(" ");
+	}
+}
