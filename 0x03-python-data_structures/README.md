@@ -19,6 +19,7 @@ Prototypes for functions written in this project:
 | `9-max_integer.py`                 | `def max_integer(my_list=[]):`                 |
 | `10-divisible_by_2.py`             | `def divisible_by_2(my_list=[]):`              |
 | `11-delete_at.py`                  | `def delete_at(my_list=[], idx=0):`            |
+| `100-print_python_list_info.c`     | `void print_python_list_info(PyObject *p);`    |
 
 ## Tasks
 * **Print a list of integers**
@@ -92,3 +93,6 @@ Prototypes for functions written in this project:
   * Helper files:
     * `linked_lists.c`: C functions handling linked lists for testing `13-is_palindrome.c` (provided by Holberton School).
     * `lists.h`: Header file containing definitions and prototypes for all types and functions used in `linked_lists.c` and `13-insert_number.c`.
+
+* **CPython #0: Python lists**
+  * `100-print_python_list_info.c`: C function that prints basic information about Python lists.
