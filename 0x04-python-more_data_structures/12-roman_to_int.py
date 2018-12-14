@@ -5,7 +5,9 @@
 
 def roman_to_int(roman_string):
     """Converts a roman numeral to an integer."""
-    if not isinstance(roman_string, str) or roman_string is None:
+    if (not isinstance(roman_string, str) or
+            roman_string is None or
+            len(roman_string) == 0):
         return None
 
     roman_dict = {
