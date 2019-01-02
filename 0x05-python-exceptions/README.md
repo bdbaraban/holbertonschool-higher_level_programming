@@ -88,3 +88,6 @@ with type-checking in `"{:d}".format())` format.
 function.
   * Upon success, returns the result of the function.
   * Otherwise, prints an en exception error to `stderr` and returns `None`.
+
+* **ByteCode -> Python #4**
+  * `102-magic_calculation.py`: Python function matching exactly a bytecode provided by Holberton School.
