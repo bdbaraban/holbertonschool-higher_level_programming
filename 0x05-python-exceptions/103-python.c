@@ -89,6 +89,8 @@ void print_python_bytes(PyObject *p)
  */
 void print_python_float(PyObject *p)
 {
+	int round;
+
 	PyFloatObject *float_obj = (PyFloatObject *)p;
 
 	fflush(stdout);
@@ -100,7 +102,10 @@ void print_python_float(PyObject *p)
 		return;
 	}
 
-	if (printf("  value: %.15g", float_obj->ob_fval) == 10)
+	printf("  value: %.15g", float_obj->ob_fval);
+	round = (int)float_obj->ob_fval;
+	if (float_obj->ob_fval - round == 0 ||
+	    round - float_obj->ob_fval == 0)
 		printf(".0");
 	printf("\n");
 }
