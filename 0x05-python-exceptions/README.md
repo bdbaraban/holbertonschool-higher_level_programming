@@ -17,6 +17,8 @@ Prototypes for functions written in this project:
 | `6-raise_exception_msg.py`       | `def raise_exception_msg(message=""):`                  |
 | `100-safe_print_integer_err.py`  | `def safe_print_integer_err(value):`                    |
 | `101-safe_function.py`           | `def safe_function(fct, *args):`                        |
+| `102-magic_calculation.py`       | `def magic_calculation(a, b);`                          |
+| `103-python.c`                   | <ul><li>`void print_python_list(PyObject *p);`</li><li>`void print_python_bytes(PyObject *p);`</li><li>`void print_python_float(PyObject *p);`</li></ul> |
 
 ## Tasks
 * **Safe list printing**
@@ -90,4 +92,9 @@ function.
   * Otherwise, prints an en exception error to `stderr` and returns `None`.
 
 * **ByteCode -> Python #4**
-  * `102-magic_calculation.py`: Python function matching exactly a bytecode provided by Holberton School.
+  * `102-magic_calculation.py`: Python function matching exactly a bytecode 
+provided by Holberton School.
+
+* **CPython #2: PyFloatObject**
+  * `103-python.c`: C functions that print basic information about Python 
+lists, bytes, and float objects.
