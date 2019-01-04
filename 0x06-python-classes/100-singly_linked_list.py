@@ -15,11 +15,9 @@ class Node:
             next_node (Node): The next_node of the new Node.
         """
         if not isinstance(data, int):
-            print("data must be an integer")
-            raise TypeError
+            raise TypeError("data must be an integer")
         elif not isinstance(next_node, Node) and next_node is not None:
-            print("next_node must be a Node object")
-            raise TypeError
+            raise TypeError("next_node must be a Node object")
         else:
             self.data = data
             self.next_node = next_node
@@ -32,8 +30,7 @@ class Node:
         @data.setter
         def data(self, value):
             if not isinstance(value, int):
-                print("data must be an integer")
-                raise TypeError
+                raise TypeError("data must be an integer")
             self.__data = value
 
         @property
@@ -48,8 +45,7 @@ class Node:
         @next_node.setter
         def next_node(self, value):
             if not isinstance(value, Node) and value is not None:
-                print("next_node must be a Node object")
-                raise TypeError
+                raise TypeError("next_node must be a Node object")
             self.__next_node = value
 
 
@@ -66,6 +62,8 @@ class SinglyLinkedList:
         Args:
             value (Node): The new Node to insert.
         """
+        if not isinstance(value, int):
+            raise TypeError("data must be an integer")
         if self.__head is None:
             self.__head = Node(value, None)
         elif self.__head.data > value:
