@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-# 5-square.py
+
 # Brennan D Baraban<375@holbertonschool.com>
 """Define a class Square."""
 
@@ -20,7 +19,8 @@ class Square:
         elif size < 0:
             print("size must be >= 0", end="")
             raise ValueError
-        if (not isinstance(position[0], int) or
+        if (not isinstance(position, tuple) or
+                not isinstance(position[0], int) or
                 not isinstance(position[1], int) or
                 position[0] < 0 or position[1] < 0):
             print("position must be a tuple of 2 positive integers")
@@ -58,7 +58,8 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if (not isinstance(value[0], int) or
+        if (not isinstance(value, tuple) or
+                not isinstance(value[0], int) or
                 not isinstance(value[1], int) or
                 value[0] < 0 or value[1] < 0):
             print("position must be a tuple of 2 positive integers")
