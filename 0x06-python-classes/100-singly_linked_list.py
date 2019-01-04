@@ -14,17 +14,18 @@ class Node:
             data (int): The data of the new Node.
             next_node (Node): The next_node of the new Node.
         """
-        if not isinstance(data, int):
-            raise TypeError("data must be an integer")
-        elif not isinstance(next_node, Node) and next_node is not None:
+        if not isinstance(next_node, Node) and next_node is not None:
             raise TypeError("next_node must be a Node object")
-        else:
-            self.data = data
-            self.next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
         @property
         def data(self):
-            """Get/set the data of the node."""
+            """Get/set the data of the node.
+
+            Args:
+                value (int): The new data of the Node.
+            """
             return (self.__data)
 
         @data.setter
