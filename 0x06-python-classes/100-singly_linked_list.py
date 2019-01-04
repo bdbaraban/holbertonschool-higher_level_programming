@@ -16,7 +16,6 @@ class Node:
         """
         if not isinstance(data, int):
             print("data must be an integer")
-            self.data = 0
             raise TypeError
         elif not isinstance(next_node, Node) and next_node is not None:
             print("next_node must be a Node object")
