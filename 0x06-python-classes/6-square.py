@@ -21,6 +21,7 @@ class Square:
             print("size must be >= 0", end="")
             raise ValueError
         if (not isinstance(position, tuple) or
+                len(position) != 2 or
                 not isinstance(position[0], int) or
                 not isinstance(position[1], int) or
                 position[0] < 0 or position[1] < 0):
@@ -60,6 +61,7 @@ class Square:
     @position.setter
     def position(self, value):
         if (not isinstance(value, tuple) or
+                len(value) != 2 or
                 not isinstance(value[0], int) or
                 not isinstance(value[1], int) or
                 value[0] < 0 or value[1] < 0):
