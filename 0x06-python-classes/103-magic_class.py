@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-# 103-magic_class.py
-# Brennan D Baraban <375@holbertonschool.com>
 """Define a class matching a bytecode provided by Holberton School."""
-
 import math
 
 
