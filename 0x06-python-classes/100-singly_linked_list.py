@@ -19,7 +19,6 @@ class Node:
             raise TypeError
         elif not isinstance(next_node, Node) and next_node is not None:
             print("next_node must be a Node object")
-            self.next_node = None
             raise TypeError
         else:
             self.data = data
