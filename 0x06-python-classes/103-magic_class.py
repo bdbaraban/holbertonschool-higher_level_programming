@@ -1,11 +1,18 @@
 #!/usr/bin/python3
+# 103-magic_calculation.py
+# Brennan D Baraban
+
 import math
 
 
 class MagicClass:
-    def __init__(self, radius):
-        """Initialize a magic class.
-        Arg: radius (float or int): The radius of the new MagicClass.
+    """Represent a circle."""
+
+    def __init__(self, radius=0):
+        """Initialize a MagicClass.
+
+        Arg:
+            radius (float or int): The radius of the new MagicClass.
         """
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
