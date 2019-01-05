@@ -41,7 +41,8 @@ attribute `self`.
   * `5-square.py`: Python class `Square` that defines a square. Builds on 
 `4-square.py` with:
     * Public instance method `def my_print(self):` that prints the square 
-with the character `#` to standard output (if `size` == 0 - prints an empty line).
+with the character `#` to standard output (if `size` == 0 -> prints an empty 
+line).
 
 * **Coordinates of a square**
   * `6-square.py`: Python class `Square` that defines a square. Builds on 
@@ -79,13 +80,17 @@ Node object`.
 new `Node` into the correct sorted position in the list increasing order).
 
 * **Print Square instance**
-  * `101-square.py`:
-* Write a class Square that defines a square by: (based on 6-square.py)
-
+  * `101-square.py`: Python class `Square` that defines a square. Builds on 
+`6-square.py` with:
+    * Method `__str__` to set printing of a `Square` instance equivalent to 
+`my_print()`.
 
 * **Compare 2 squares**
-  * `102-square.py`:
-* Write a class Square that defines a square by: (based on 4-square.py)
+  * `102-square.py`: Python class `Square` that defines a square. Builds on 
+`101-square.py` with:
+    * Methods `__eq__`, `__ne__`, `__lt__`, `__le__`, `__gt__`, and `__ge__`, 
+to enable usage of `Square` instances with logical operators `==`, `!=`, `<`, 
+`<=`, `>`, and `>=`, respectively, based on the square area.
 
 * **ByteCode -> Python #5**
   * `103-magic_class.py`: Python function matching exactly a bytecode 
