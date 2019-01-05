@@ -12,6 +12,7 @@ specific list of projects contained follows:
 * 0x03. Python - Data Structures: Lists, Tuples
 * 0x04. Python - More Data Structures: Set, Dictionary
 * 0x05. Python - Exceptions 
+* 0x06. Python - Classes and Objects
 
 ## Author
 * **Brennan D Baraban** <[bdbaraban](https://github.com/bdbaraban)> - 
