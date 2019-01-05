@@ -15,12 +15,12 @@ def safe_print_integer_err(value):
         value (int): The integer to print.
 
     Returns:
-        If a ValueError occurs - False.
+        If a TypeError or ValueError occurs - False.
         Otherwise - True.
     """
     try:
         print("{:d}".format(value))
         return (True)
-    except ValueError:
+    except (TypeError, ValueError):
         print("Exception: {}".format(sys.exc_info()[1]), file=sys.stderr)
         return (False)
