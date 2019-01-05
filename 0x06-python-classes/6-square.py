@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 6-square.py
-# Brennan D Baraban<375@holbertonschool.com>
+# Brennan D Baraban <375@holbertonschool.com>
 """Define a class Square."""
 
 
@@ -14,59 +14,34 @@ class Square:
             size (int): The size of the new square.
             position (int, int): The position of the new square.
         """
-        if not isinstance(size, int):
-            print("size must be an integer", end="")
-            raise TypeError
-        elif size < 0:
-            print("size must be >= 0", end="")
-            raise ValueError
-        if (not isinstance(position, tuple) or
-                len(position) != 2 or
-                not isinstance(position[0], int) or
-                not isinstance(position[1], int) or
-                position[0] < 0 or position[1] < 0):
-            print("position must be a tuple of 2 positive integers", end="")
-            raise TypeError
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        """Get/set the current size of the square.
-
-        Args:
-            value (int): The new size of the square.
-        """
+        """Get/set the current size of the square."""
         return (self.__size)
 
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
-            print("size must be an integer", end="")
-            raise TypeError
+            raise TypeError("size must be an integer")
         elif value < 0:
-            print("size must be >= 0", end="")
-            raise ValueError
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     @property
     def position(self):
-        """Get/set the current position of the square.
-
-        Args:
-            value (int, int): The new position of the square.
-        """
+        """Get/set the current position of the square."""
         return (self.__position)
 
     @position.setter
     def position(self, value):
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
-                not isinstance(value[0], int) or
-                not isinstance(value[1], int) or
-                value[0] < 0 or value[1] < 0):
-            print("position must be a tuple of 2 positive integers", end="")
-            raise TypeError
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):

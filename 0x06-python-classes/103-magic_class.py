@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # 103-magic_calculation.py
 # Brennan D Baraban
+"""Define a MagicClass matching exactly a bytecode provided by Holberton."""
 
 import math
 

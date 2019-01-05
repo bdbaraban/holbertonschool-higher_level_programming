@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 5-square.py
-# Brennan D Baraban<375@holbertonschool.com>
+# Brennan D Baraban <375@holbertonschool.com>
 """Define a class Square."""
 
 
@@ -13,31 +13,19 @@ class Square:
         Args:
             size (int): The size of the new square.
         """
-        if not isinstance(size, int):
-            print("size must be an integer", end="")
-            raise TypeError
-        elif size < 0:
-            print("size must be >= 0", end="")
-            raise ValueError
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
-        """Get/set the current size of the square.
-
-        Args:
-            value (int): The new size of the square.
-        """
+        """Get/set the current size of the square."""
         return (self.__size)
 
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
-            print("size must be an integer", end="")
-            raise TypeError
+            raise TypeError("size must be an integer")
         elif value < 0:
-            print("size must be >= 0", end="")
-            raise ValueError
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
@@ -47,7 +35,7 @@ class Square:
     def my_print(self):
         """Print the square with the # character."""
         for i in range(0, self.__size):
-            [print("#", end="") for j in range(0, self.__size)]
+            [print("#", end="") for j in range(self.__size)]
             print("")
         if self.__size == 0:
             print("")
