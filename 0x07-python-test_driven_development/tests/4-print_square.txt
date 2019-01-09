@@ -41,12 +41,11 @@ represents the height and width of the square.
     ##########
     ##########
 
-If ``size`` is zero, the function prints an empty line.
+If ``size`` is zero, the function prints nothing.
 
 ::
 
     >>> print_square(0)
-    <BLANKLINE> 
 
 Invalid Sizes
 =============
