@@ -53,24 +53,6 @@ The function also works with floating-point numbers.
     [[ 34.69   55.44 ]
      [-78.61   29.018]]
 
-Integers and floats can be combined.
-
-::
-
-    >>> m_a = [
-    ... [1, 2.2, 3.3, 4],
-    ... [5, 6, 7, 8.8],
-    ... ]
-    >>> m_b = [
-    ... [1.1, 2, 3.3],
-    ... [4.0, 5.5, 6],
-    ... [7, 8, 9],
-    ... [10.01, 11, 12.3]
-    ... ]
-    >>> print(lazy_matrix_mul(m_a, m_b))
-    [[  73.04    84.5     95.4  ]
-     [ 166.588  195.8    223.74 ]]
-
 ValueErrors
 ===========
 
@@ -176,7 +158,7 @@ integers or floats! Otherwise, a TypeError is raised
 
 ::
 
-    >>> print(lazy_matrix_mul([[1, 2]], [[{"a": 1}, 8.8]]))
+    >>> print(lazy_matrix_mul([[5, 6], [7, 8]], [[5, "6"], [7, 8]]))
     Traceback (most recent call last):
     TypeError: invalid data type for einsum
 
@@ -201,7 +183,7 @@ equivalent. Otherwise, a TypeError is raised.
     ... ]
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    TypeError: setting an array element with a sequence
+    TypeError: setting an array element with a sequence.
 
 ::
 
@@ -215,7 +197,7 @@ equivalent. Otherwise, a TypeError is raised.
     ... ]
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    TypeError: setting an array element with a sequence
+    TypeError: setting an array element with a sequence.
 
 ::
 
@@ -226,4 +208,4 @@ equivalent. Otherwise, a TypeError is raised.
     >>> m_b = m_a
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    TypeError: setting an array element with a sequence
+    TypeError: setting an array element with a sequence.

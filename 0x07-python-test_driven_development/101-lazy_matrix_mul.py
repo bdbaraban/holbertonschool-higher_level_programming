@@ -47,7 +47,7 @@ def lazy_matrix_mul(m_a, m_b):
 
     if (not all(len(row) == len(m_a[0]) for row in m_a) or
             not all(len(row) == len(m_b[0]) for row in m_b)):
-        raise TypeError("setting an array element with a sequence")
+        raise TypeError("setting an array element with a sequence.")
 
     if cols_a != rows_b:
         raise ValueError("shapes ({},{}) and ({},{}) not aligned: {} (dim {}) "
