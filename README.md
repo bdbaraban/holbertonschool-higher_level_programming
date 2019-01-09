@@ -14,6 +14,7 @@ specific list of projects contained follows:
 * 0x05. Python - Exceptions 
 * 0x06. Python - Classes and Objects
 * 0x07. Python - Test-driven development
+* 0x08. Python - More Classes and Objects
 
 ## Author
 * **Brennan D Baraban** <[bdbaraban](https://github.com/bdbaraban)> - 
