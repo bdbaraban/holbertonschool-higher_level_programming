@@ -53,6 +53,21 @@ The function also works with floating-point numbers.
     [[ 34.69   55.44 ]
      [-78.61   29.018]]
 
+A minimum of two arguments must be provided.
+
+::
+
+    >>> print(lazy_matrix_mul(m_a))
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+::
+
+    >>> print(lazy_matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    TypeError: lazy_matrix_mul() missing 2 required positional arguments: 
+    'm_a' and 'm_b'
+
 ValueErrors
 ===========
 
