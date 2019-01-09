@@ -77,7 +77,7 @@ must be a string`.
   * No spaces are printed at the beginning or end of each printed line.
 
 * **Max integer - Unittest**
- * `tests/6-max_integer_test.py`: Python class/script that runs unittests for 
+  * `tests/6-max_integer_test.py`: Python class/script that runs unittests for 
 the function `def max_integer(list=[]):` (provided by Holberton School).
 
 * **Matrix multiplication**
