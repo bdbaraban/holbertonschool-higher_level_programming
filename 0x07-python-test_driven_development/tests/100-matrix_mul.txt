@@ -66,6 +66,22 @@ Integers and floats can be combined.
     >>> print(matrix_mul(m_a, m_b))
     [[73.03999999999999, 84.5, 95.4], [166.58800000000002, 195.8, 223.74]]
 
+A minimum of two arguments must be provided. Otherwise, a TypeError is raised.
+
+::
+
+    >>> print(matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 2 required positional arguments: 
+    'm_a' and 'm_b'
+
+::
+
+    >>> print(matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    TypeError: matrix_mul() missing 2 required positional arguments: 
+    'm_a' and 'm_b'
+
 ValueErrors
 ===========
 
