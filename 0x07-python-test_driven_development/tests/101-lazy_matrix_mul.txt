@@ -90,7 +90,7 @@ equal to the column count in ``m_b``), a ValueError is raised.
     ... ]
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    ValueError: cannot multiply - m_a and m_b are unaligned
+    ValueError: shapes (2,2) and (2,2) not aligned: 2 (dim 3) != 2 (dim 2)
 
 
 The parameters ``m_a`` and ``m_b`` cannot be empty. Otherwise, a ValueError
@@ -100,19 +100,19 @@ is raised.
 
     >>> print(lazy_matrix_mul([], [[1, 2]]))
     Traceback (most recent call last):
-    ValueError: m_a is empty
+    ValueError: shapes (2,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
 
 ::
 
     >>> print(lazy_matrix_mul([[1, 2]], [[]]))
     Traceback (most recent call last):
-    ValueError: m_b is empty
+    ValueError: shapes (0,1) and (0,0) not aligned: 1 (dim 1) != 0 (dim 1)
 
 ::
 
     >>> print(lazy_matrix_mul([[]], []))
     Traceback (most recent call last):
-    ValueError: m_a is empty
+    ValueError: shapes (0,1) and (0,0) not aligned: 1 (dim 0) != 0 (dim 1)
 
 Invalid Matrices
 ================
@@ -124,66 +124,67 @@ not a list, a TypeError is raised.
 
     >>> print(lazy_matrix_mul("not a list", [[1, 2]]))
     Traceback (most recent call last):
-    TypeError: m_a is not a list
+    ValueError: Scalar operands are not allowed, use '*' instead
 
 ::
 
     >>> print(lazy_matrix_mul([[1, 2]], "also not a list"))
     Traceback (most recent call last):
-    TypeError: m_b is not a list
+    ValueError: Scalar operands are not allowed, use '*' instead
 
 ::
 
     >>> print(lazy_matrix_mul("not a list", "also not a list"))
     Traceback (most recent call last):
-    TypeError: m_a is not a list
+    ValueError: Scalar operands are not allowed, use '*' instead
 
 ::
 
     >>> print(lazy_matrix_mul(None, None))
     Traceback (most recent call last):
-    TypeError: m_a is not a list
+    ValueError: Scalar operands are not allowed, use '*' instead
 
-Not just any list - they *must* be lists of lists!
+Not just any list - they *must* be lists of lists! Otherwise, a TypeError
+is raised.
 
 ::
 
     >>> print(lazy_matrix_mul([1, 2], [[3, 4]]))
     Traceback (most recent call last):
-    TypeError: m_a is not a list of lists
+    TypeError: invalid data type for einsum
 
 ::
 
     >>> print(lazy_matrix_mul([[1, 2]], [3, 4]))
     Traceback (most recent call last):
-    TypeError: m_b is not a list of lists
+    TypeError: invalid data type for einsum
 
 ::
 
     >>> print(lazy_matrix_mul([1, 2], [3, 4]))
     Traceback (most recent call last):
-    TypeError: m_a is not a list of lists
+    TypeError: invalid data type for einsum
 
 And not just any list of lists - they *must* be lists of lists containing
-integers or floats!
+integers or floats! Otherwise, a TypeError is raised
 
 ::
 
     >>> print(lazy_matrix_mul([[1, "non-number"]], [[3, 4]]))
     Traceback (most recent call last):
-    TypeError: m_a contains non-numbers
+    TypeError: invalid data type for einsum
 
 ::
 
     >>> print(lazy_matrix_mul([[1, 2]], [[{"a": 1}, 8.8]]))
     Traceback (most recent call last):
-    TypeError: m_b contains non-numbers
+    TypeError: invalid data type for einsum
 
 ::
 
     >>> print(lazy_matrix_mul([[1, "non-number"]], [[{"a": 1}, 8.8]]))
     Traceback (most recent call last):
-    TypeError: m_a contains non-numbers
+    TypeError: invalid data type for einsum
 
 Finally, the length of all rows in matrices ``m_a`` and ``m_b`` should be
 equivalent. Otherwise, a TypeError is raised.
@@ -200,7 +201,7 @@ equivalent. Otherwise, a TypeError is raised.
     ... ]
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    TypeError: m_a contains rows of different sizes
+    TypeError: setting an array element with a sequence
 
 ::
 
@@ -214,7 +215,7 @@ equivalent. Otherwise, a TypeError is raised.
     ... ]
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    TypeError: m_b contains rows of different sizes
+    TypeError: setting an array element with a sequence
 
 ::
 
@@ -225,4 +226,4 @@ equivalent. Otherwise, a TypeError is raised.
     >>> m_b = m_a
     >>> print(lazy_matrix_mul(m_a, m_b))
     Traceback (most recent call last):
-    TypeError: m_a contains rows of different sizes
+    TypeError: setting an array element with a sequence

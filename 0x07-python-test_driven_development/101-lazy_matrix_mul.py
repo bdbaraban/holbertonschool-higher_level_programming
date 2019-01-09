@@ -20,38 +20,42 @@ def lazy_matrix_mul(m_a, m_b):
     Returns:
         A new matrix representing the multiplication of m_a by m_b.
     """
+    if not isinstance(m_a, list) or not isinstance(m_b, list):
+        raise ValueError("Scalar operands are not allowed, use '*' instead")
 
-    if m_a == [] or m_a == [[]]:
-        raise ValueError("m_a is empty")
-    if m_b == [] or m_b == [[]]:
-        raise ValueError("m_b is empty")
+    if (not all(isinstance(row, list) for row in m_a) or
+            not all(isinstance(row, list) for row in m_b)):
+        raise TypeError("invalid data type for einsum")
 
-    if not isinstance(m_a, list):
-        raise TypeError("m_a is not a list")
-    if not isinstance(m_b, list):
-        raise TypeError("m_b is not a list")
+    rows_a = len(m_a)
+    cols_a = 0 if rows_a == 0 else len(m_a[0])
+    rows_b = len(m_b)
+    cols_b = 0 if rows_b == 0 else len(m_b[0])
 
-    if not all(isinstance(row, list) for row in m_a):
-        raise TypeError("m_a is not a list of lists")
-    if not all(isinstance(row, list) for row in m_b):
-        raise TypeError("m_b is not a list of lists")
+    if m_a == [] or m_a == [[]] or m_a == [] or m_b == [[]]:
+        raise ValueError("shapes ({},{}) and ({},{}) not aligned: {} (dim {}) "
+                         "!= {} (dim {})".format(cols_b, rows_a,
+                                                 cols_b, cols_b,
+                                                 rows_a, rows_b,
+                                                 cols_b, rows_a))
 
-    if not all(len(row) == len(m_a[0]) for row in m_a):
-        raise TypeError("m_a contains rows of different sizes")
-    if not all(len(row) == len(m_b[0]) for row in m_b):
-        raise TypeError("m_b contains rows of different sizes")
+    if (not all((isinstance(ele, int) or isinstance(ele, float))
+                for ele in [num for row in m_a for num in row]) or
+        not all((isinstance(ele, int) or isinstance(ele, float))
+                for ele in [num for row in m_b for num in row])):
+        raise TypeError("invalid data type for einsum")
 
-    if not all((isinstance(ele, int) or isinstance(ele, float))
-               for ele in [num for row in m_a for num in row]):
-        raise TypeError("m_a contains non-numbers")
-    if not all((isinstance(ele, int) or isinstance(ele, float))
-               for ele in [num for row in m_b for num in row]):
-        raise TypeError("m_b contains non-numbers")
+    if (not all(len(row) == len(m_a[0]) for row in m_a) or
+            not all(len(row) == len(m_b[0]) for row in m_b)):
+        raise TypeError("setting an array element with a sequence")
+
+    if cols_a != rows_b:
+        raise ValueError("shapes ({},{}) and ({},{}) not aligned: {} (dim {}) "
+                         "!= {} (dim {})".format(cols_b, rows_a,
+                                                 cols_b, cols_b,
+                                                 rows_a, rows_b,
+                                                 cols_b, rows_a))
 
     a = np.array(m_a)
     b = np.array(m_b)
-
-    try:
-        return (a.dot(b))
-    except ValueError:
-        raise ValueError("cannot multiply - m_a and m_b are unaligned")
+    return (a.dot(b))
