@@ -78,3 +78,18 @@ Rectangle` or `rect_2 must be an instance of Rectangle`.
 `8-rectangle.py` with:
     * Class method `def square(cls, size=0):` that returns a new `Rectangle` 
 instance with `width == height == size`.
+
+* **N Queens**
+  * `101-nqueens.py`: Python program that solves the [N queens puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle).
+  * Usage: `./101-nqueens.py N`
+  * Determines all possible solutions for placing N non-attacking queens on an 
+NxN chessboard.
+  * Exactly two arguments must be provided. Otherwise, the program prints 
+`Usage: nqueens N` and exits with the status `1`.
+  * If the provided `N` is not an integer, the program prints `N must be a 
+number` and exits with the status `1`.
+  * If the provided `N` is less than `4`, the program prints `N must be at least 
+4` and exits with the status `1`.
+  * Solutions are printed one per line in the format `[[r, c], [r, c], [r, c], 
+[r, c]]` where `r` and `c` represent the row and column, respectively, where a 
+queen must be placed.
