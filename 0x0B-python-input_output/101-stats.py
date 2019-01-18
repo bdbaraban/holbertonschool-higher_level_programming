@@ -27,11 +27,13 @@ if __name__ == "__main__":
                 else:
                     status_codes[line[7]] += 1
 
-                if count == 10:
+                if count == 9:
                     break
                 count += 1
+
         except KeyboardInterrupt:
-            exit()
+            raise
+
         finally:
             print("File size: {}".format(size))
             for key in sorted(status_codes):
