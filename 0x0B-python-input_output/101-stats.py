@@ -9,21 +9,20 @@ prints the following statistics:
     - Count of read status codes up to that point.
 """
 
-if __name__ == "__main__":
-    size = 0
-    status_codes = {}
+size = 0
+status_codes = {}
 
-    while True:
-        for i in range(10):
-            line = input()
-            line = line.split()
+while True:
+    for i in range(10):
+        line = input()
+        line = line.split()
 
-            size += int(line[8])
-            if status_codes.get(line[7], -1) == -1:
-                status_codes[line[7]] = 1
-            else:
-                status_codes[line[7]] += 1
+        size += int(line[8])
+        if status_codes.get(line[7], -1) == -1:
+            status_codes[line[7]] = 1
+        else:
+            status_codes[line[7]] += 1
 
-        print("File size: {}".format(size))
-        for key in sorted(status_codes):
-            print("{}: {}".format(key, status_codes[key]))
+    print("File size: {}".format(size))
+    for key in sorted(status_codes):
+        print("{}: {}".format(key, status_codes[key]))
