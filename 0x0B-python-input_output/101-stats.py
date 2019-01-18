@@ -10,13 +10,15 @@ prints the following statistics:
 """
 
 if __name__ == "__main__":
+    import sys
+
     size = 0
     status_codes = {}
 
     while True:
         try:
-            for i in range(10):
-                line = input()
+            count = 0
+            for line in sys.stdin:
                 line = line.split()
 
                 size += int(line[8])
@@ -24,6 +26,10 @@ if __name__ == "__main__":
                     status_codes[line[7]] = 1
                 else:
                     status_codes[line[7]] += 1
+
+                if count == 10:
+                    break
+                count += 1
         except KeyboardInterrupt:
             exit()
         finally:
