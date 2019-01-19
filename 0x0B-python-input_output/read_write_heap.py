@@ -44,7 +44,7 @@ try:
                 address = line[0].split('-')
 
 except IOError as e:
-    print("[ERROR] cannot open file {}".format(maps_path))
+    print("  [ERROR] cannot open file {}".format(maps_path))
     print(e)
     sys.exit(1)
 
@@ -63,7 +63,7 @@ try:
             print("the string has been located.")
             print("    >< index: {}".format(index))
         except Exception as e:
-            print("[ERROR] cannot locate string {}".format(search_string))
+            print("  [ERROR] cannot locate string {}".format(search_string))
             print(e)
             sys.exit(0)
 
@@ -75,7 +75,7 @@ try:
         print("the string has been replaced.")
 
 except IOError:
-    print("[ERROR] cannot write to file {}".format(mem_path))
+    print("  [ERROR] cannot write to file {}".format(mem_path))
     sys.exit(1)
 
 print("Happy hacking, hacker!")
