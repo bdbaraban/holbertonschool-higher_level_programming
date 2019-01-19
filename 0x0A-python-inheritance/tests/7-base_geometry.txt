@@ -85,6 +85,30 @@ But, if ``value`` is not an integer, a ``TypeError`` is raised.
     Traceback (most recent call last):
     TypeError: another invalid must be an integer
 
+::
+
+    >>> bg.integer_validator("invalid tuple", (1,))
+    Traceback (most recent call last):
+    TypeError: invalid tuple must be an integer
+
+::
+
+    >>> bg.integer_validator("and another", [3])
+    Traceback (most recent call last):
+    TypeError: and another must be an integer
+
+::
+
+    >>> bg.integer_validator("more invalid testing", {3, 4})
+    Traceback (most recent call last):
+    TypeError: more invalid testing must be an integer
+
+::
+
+    >>> bg.integer_validator("absolutely every possible invalid", None)
+    Traceback (most recent call last):
+    TypeError: absolutely every possible invalid must be an integer
+
 And if ``value`` is an integer, but less than or equal to zero, a ValueError
 is raised.
 
