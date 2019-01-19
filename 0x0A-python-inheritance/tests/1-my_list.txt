@@ -151,6 +151,14 @@ Another friendly reminder that the original list is unaltered :)
     >>> print(my_list)
     ['Brennan', 'Poppy', 'School', 'Holberton', 'Betty']
 
+Nothing to sort with empty lists.
+
+::
+
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
 If ``print_sorted(...)`` is called on a list of different types, a TypeError
 will be raised.
 
