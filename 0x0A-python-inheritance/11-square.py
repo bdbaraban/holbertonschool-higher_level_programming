@@ -15,6 +15,7 @@ class Square(Rectangle, BaseGeometry):
         Args:
             size (int): The size of the new square.
         """
+        super().integer_validator("size", size)
         super().__init__(size, size)
         self.__size = size
 
@@ -24,6 +25,5 @@ class Square(Rectangle, BaseGeometry):
 
     def __str__(self):
         """Return the print() and str() representation of a Square."""
-        string = "[Square] " + str(self.__size)
-        string += "/" + str(self.__size)
+        string = "[Square] " + str(self.__size) + "/" + str(self.__size)
         return string
