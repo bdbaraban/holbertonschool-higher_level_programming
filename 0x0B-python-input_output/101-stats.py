@@ -43,6 +43,7 @@ if __name__ == "__main__":
                 count = 0
             else:
                 count += 1
+        print_stats(size, status_codes)
 
     except KeyboardInterrupt:
         print_stats(size, status_codes)
