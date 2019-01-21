@@ -17,7 +17,7 @@ if len(sys.argv) != 4:
 
 pid = sys.argv[1]
 search_string = sys.argv[2]
-replace_string = sys.argv[3]
+replace_string = sys.argv[3] + "\0"
 
 print("Hacking a VM, eh? So you like to live dangerously... ")
 
@@ -67,9 +67,8 @@ try:
             print(e)
             sys.exit(0)
 
-        print("  <> Replacing string {} with {}... ".format(search_string,
-                                                            replace_string,
-                                                            end=""))
+        print("  <> Replacing string {} ".format(search_string), end="")
+        print("with {}... ".format(replace_string[:-1]), end="")
         mem_file.seek(start + index)
         mem_file.write(replace_string.encode("ASCII"))
         print("the string has been replaced.")
