@@ -4,23 +4,31 @@
 """Defines unittests for models/square.py.
 
 Unittest classes:
-    TestSquare_instantiation
-    TestSquare_size
-    TestSquare_order_of_initialization
-    TestSquare_area
-    TestSquare_stdout
-    TestSquare_update_args
-    TestSquare_update_kwargs
-    TestSquare_to_dictionary
+    TestSquare_instantiation - line 24
+    TestSquare_size - line 88
+    TestSquare_order_of_initialization - line 165
+    TestSquare_area - line 181
+    TestSquare_stdout - line 202
+    TestSquare_update_args - line 285
+    TestSquare_update_kwargs - line 397
+    TestSquare_to_dictionary - 499
 """
-import unittest
 import io
 import sys
+import unittest
+from models.base import Base
+from models.rectangle import Rectangle
 from models.square import Square
 
 
 class TestSquare_instantiation(unittest.TestCase):
     """Unittests for testing instantiation of the Square class."""
+
+    def test_is_base(self):
+        self.assertIsInstance(Square(10), Base)
+
+    def test_is_rectangle(self):
+        self.assertIsInstance(Square(10), Rectangle)
 
     def test_no_args(self):
         with self.assertRaises(TypeError):
