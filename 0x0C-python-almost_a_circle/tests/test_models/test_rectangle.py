@@ -332,7 +332,7 @@ class TestRectangle_x(unittest.TestCase):
 
 
 class TestRectangle_y(unittest.TestCase):
-    """Unittests for testing initizliation of Rectangle y attribute."""
+    """Unittests for testing initialization of Rectangle y attribute."""
 
     def test_None_y(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
