@@ -78,7 +78,7 @@ class Base:
             **dictionary (dict): Key/value pairs of attributes to initialize.
         """
         if dictionary and dictionary != {}:
-            new = cls(7, 7, id="dummy")
+            new = cls(7, 7)
             new.update(**dictionary)
             return new
 
