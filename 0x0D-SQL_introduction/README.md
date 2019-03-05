@@ -1,4 +1,3 @@
-xx:q!
 # SQL - Introduction
 
 This was my first project in which I began to work with SQL and relational
