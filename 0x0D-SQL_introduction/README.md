@@ -13,7 +13,7 @@ command line argument.
 $ cat 3-list_tables.sql | mysql -h localhost -u root -p mysql
 ```
 
-* Tasks 101-103 query from a database provided by Holberton School.
+* Tasks 101-103 query from the database `temperatures.sql`.
 
 ## Tasks
 
