@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-# Usage: ./0-body_size.sh <URL>
-# Sends a GET request to the given URL and displays
-#+ the byte size of the response body.
-
+#!/bin/bash
+# Get the byte size of the HTTP response header for a given URL.
 curl -s "$1" | wc -c
