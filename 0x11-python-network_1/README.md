@@ -1,62 +1,78 @@
-# 0x11. Python - Network #1
+# Python - Network #1
 
-## Description
-What you should learn from this project:
+This project involved learning how to use the `urllib` and `requests` Python
+libraries to send and receive HTTP messages to URL's. I practiced sending `GET`
+and `POST` requests, fetching JSON resources, and interacting with API's (the
+Star Wars API and GitHub API).
 
-* How to fetch internet resources with the Python package urllib
-* How to decode urllib body response
-* How to use the Python package requests #requestsiswaysimplerthanurllib
-* How to make HTTP GET request 
-* How to make HTTP POST/PUT/etc. request
-* How to fetch JSON resources
-* How to manipulate data from an external service
+## Tasks
 
----
+* **0. What's my status? #0**
+  * [0-hbtn_status.py](./0-hbtn_status.py): Python script that fetches
+`https://intranet.hbtn.io/status`.
+  * Uses `urllib`.
 
-### [0. What's my status? #0](./0-hbtn_status.py)
-* Write a Python script that fetches https://intranet.hbtn.io/status
+* **1. Response header value #0**
+  * [1-hbtn_header.py](./1-hbtn_header.py): Python script that displays the
+`X-Request-Id` response header variable of a request to a given URL.
+  * Usage: `./1-hbtn_header.py <URL>`
+	* Uses `urllib`.
 
+* **2. POST an email #0**
+  * [2-post_email.py](./2-post_email.py): Python script that sends a `POST`
+request to a given URL with a given email, and displays the response body.
+  * Usage: `./2-post_email.py <URL> <email>`.
+	* Uses `urllib`.
 
-### [1. Response header value #0](./1-hbtn_header.py)
-* Write a Python script that takes in a URL, sends a request to the URL and displays the value of the X-Request-Id variable found in the header of the response.
+* **3. Error code #0**
+  * [3-error_code.py](./3-error_code.py): Python script sends a request to
+a given URL and displays the response body.
+  * Handles HTTP errors.
+	* Uses `urllib`.
 
+* **4. What's my status? #1**
+  * [4-hbtn_status.py](./4-hbtn_status.py): Python script that fetches
+`https://intranet.hbtn.io/status`.
+  * Uses `requests`.
 
-### [2. POST an email #0](./2-post_email.py)
-* Write a Python script that takes in a URL and an email, sends a POST request to the passed URL with the email as a parameter, and displays the body of the response (decoded in utf-8)
+* **5. Response header value #1**
+  * [5-hbtn_header.py](./5-hbtn_header.py): Python script that displays the
+`X-Request-Id` response header variable of a request to a given URL.
+  * Usage: `./5-hbtn_header.py <URL>`
+	* Uses `requests`.
 
+* **6. POST an email #1**
+  * [6-post_email.py](./6-post_email.py): Python script that sends a `POST`
+request to a given URL with a given email, and displays the response body.
+  * Usage: `./6-post_email.py <URL> <email>`.
+	* Uses `requests`.
 
-### [3. Error code #0](./3-error_code.py)
-* Write a Python script that takes in a URL, sends a request to the URL and displays the body of the response (decoded in utf-8).
+* **7. Error code #1**
+  * [7-error_code.py](./7-error_code.py): Python script sends a request to
+a given URL and displays the response body.
+  * Handles HTTP errors.
+	* Uses `requests`.
 
+* **8. Search API**
+  * [8-json_api.py](./8-json_api.py): Python script that sends a `POST` request
+to `http://0.0.0.0:5000/search_user` with a letter passed as parameter.
+  * Usage: `./8-json_api.py <letter>`
+	* The letter is sent as the value of the variable `q`.
+	* If no letter is given, sets `q=""`.
+	* If the response body is properly formatted and non-empty, displays it as
+`[<id>] <name>`.
+  * Uses `requests`.
 
-### [4. What's my status? #1](./4-hbtn_status.py)
-* Write a Python script that fetches https://intranet.hbtn.io/status
+* **9. Star Wars API #0**
+  * [9-starwars.py](./9-starwars.py): Python script sends a search request to
+the Star Wars API `people` endpoint with a given string.
+  * Usage: `./9-starwars.py <search string>`
+	* Displays the total number and `name` of each result.
+	* Uses `requests`.
 
-
-### [5. Response header value #1](./5-hbtn_header.py)
-* Write a Python script that takes in a URL, sends a request to the URL and displays the value of the variable X-Request-Id in the response header
-
-
-### [6. POST an email #1](./6-post_email.py)
-* Write a Python script that takes in a URL and an email address, sends a POST request to the passed URL with the email as a parameter, and finally displays the body of the response.
-
-
-### [7. Error code #1](./7-error_code.py)
-* Write a Python script that takes in a URL, sends a request to the URL and displays the body of the response.
-
-
-### [8. Search API](./8-json_api.py)
-* Write a Python script that takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user with the letter as a parameter.
-
-
-### [9. Star Wars API #0](./9-starwars.py)
-* Write a Python script that takes in a string and sends a search request to the Star Wars API
-
-
-### [10. My Github!](./10-my_github.py)
-* Write a Python script that takes your Github credentials (username and password) and uses the Github API to display your id
-
----
-
-## Author
-* **Brennan D Baraban** - [bdbaraban](https://github.com/bdbaraban)
+* **10. My Github!**
+  * [10-my_github.py](./10-my_github.py): Python script that takes GitHub
+credentials (username and password) and uses the Github API to display the
+corresponding ID.
+  * Usage: `./10-my_github.py <username> <password>`
+	* Uses `requests`.
