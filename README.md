@@ -23,6 +23,7 @@ specific list of projects contained follows:
 * [0x0E. SQL - More queries](./0x0E-SQL_more_queries)
 * [0x0F. Python - Object-relational mapping](./0x0F-python-object_relational_mapping)
 * [0x10. Python - Network #0](./0x10-python-network_0)
+* [0x11. Python - Network #1](./0x11-python-network_1)
 
 ## Author
 
