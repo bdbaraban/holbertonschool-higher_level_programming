@@ -3,7 +3,7 @@
 
 Mangages pagination to display all results.
 
-Usage: ./9-starwars.py <search string>
+Usage: ./101-starwars.py <search string>
   - The search request is sent to the Star Wars API search people endpoint.
 """
 import sys
