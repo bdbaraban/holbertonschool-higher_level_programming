@@ -40,9 +40,9 @@ passed in the format `<arg 1> is <arg 2>`.
 * **5. An Integer**
   * [5-to_integer.js](./5-to_integer.js): JavaScript script that prints
 `My number: <first argument converted in integer>` if the first pased argument
-can be converted to a number.
+can be converted to an integer.
   * Usage: `./5-to_integer.js`
-  * If the argument cannot be converted to a number, prints `'Not a number'`.
+  * If the argument cannot be converted to an integer, prints `'Not a number'`.
 
 * **6. Loop to languages**
   * [6-multi_languages_loop.js](./6-multi_languages_loop.js): JavaScript script that
