@@ -3,6 +3,20 @@
 This was the first JavaScript project I completed at Holberton. Tasks involved
 writing various introductory-level JavaScript scripts on Node.js.
 
+## Helper Files
+
+* [tests](./tests): Folder of Python scripts for testing tasks `13`, `100`, `101`, `102`, and `103`.
+
+## Function Prototypes
+
+Prototypes for functions written in this project:
+
+| File        | Prototype                                  |
+| ----------- | ------------------------------------------ |
+| `13-add.js` | `exports.add = (a, b)`                     |
+| `101-call_me_moby.js` | `function (x, theFunction)`      |
+| `102-add_me_maybe.js` | `function (number, theFunction)` |
+
 ## Tasks
 
 * **0. First constant, first print**
@@ -114,12 +128,10 @@ console.log(myVar);
 * **15. Call me Moby**
   * [101-call_me_moby.js](./101-call_me_moby.js): JavaScript function that executes
 `x` times a given function.
-  * Prototype: `function (x, theFunction)`
 
 * **16. Add me maybe**
   * [102-add_me_maybe.js](./102-add_me_maybe.js): JavaScript function that
 increments a given number and calls a given function.
-  * Prototype: `function (number, theFunction)`
 
 * **17. Increment object**
   * [103-object_fct.js](./103-object_fct.js): Update of the following JavaScript
