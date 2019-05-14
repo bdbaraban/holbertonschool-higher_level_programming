@@ -1,14 +1,14 @@
 #!/usr/bin/node
 const request = require('request');
-request(process.argv[2], function (error, response, body) {
+request('http://swapi.co/api/films', function (error, response, body) {
   if (error) {
     console.log(error);
   } else {
     const results = JSON.parse(body).results;
-    let count = 0;
-    results.forEach(function (movie) {
-      if (movie.characters.includes('https://swapi.co/api/people/18/', 0)) count++;
-    });
-    console.log(count);
+    console.log(results.reduce((count, movie) => {
+      return movie.characters.includes('https://swapi.co/api/people/18/', 0)
+        ? count + 1
+        : count;
+    }, 0));
   }
 });
