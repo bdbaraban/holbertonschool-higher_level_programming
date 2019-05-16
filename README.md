@@ -27,6 +27,7 @@ scripting. The specific list of projects contained follows:
 * [0x12. Javascript - Warm up](./0x12-javascript-warm_up)
 * [0x13. Javascript - Objects, Scopes and Closures](./0x13-javascript_objects_scopes_closures)
 * [0x14. Javascript - Web scraping](./0x14-javascript-web_scraping)
+* [0x15. Javascript - Web JQuery](./0x15-javascript-web_jquery)
 
 ## Author
 
