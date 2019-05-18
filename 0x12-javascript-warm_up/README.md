@@ -5,7 +5,7 @@ writing various introductory-level JavaScript scripts on Node.js.
 
 ## Tests :heavy_check_mark:
 
-* [tests](./tests): Folder of Python scripts for testing tasks `13`, `100`, `101`, `102`, and `103`.
+* [tests](./tests): Folder of test files. Provided by Holberton School.
 
 ## Function Prototypes :floppy_disk:
 
