@@ -5,7 +5,7 @@ variable aliasing and object identifiers, types, and mutability. The project
 involved a series of quiz-like questions the answers to which I provided in
 single-line `.txt` files.
 
-## Tests :heavy_check_marK:
+## Tests :heavy_check_mark:
 
 * [tests](./tests): Folder of test files. Provided by Holberton School.
 
