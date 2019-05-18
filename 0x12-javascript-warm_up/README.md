@@ -3,7 +3,7 @@
 This was the first JavaScript project I completed at Holberton. Tasks involved
 writing various introductory-level JavaScript scripts on Node.js.
 
-## Tests :tests:
+## Tests :heavy_check_mark:
 
 * [tests](./tests): Folder of Python scripts for testing tasks `13`, `100`, `101`, `102`, and `103`.
 
