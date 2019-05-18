@@ -29,11 +29,11 @@ scripting. The specific list of projects contained follows:
 * [0x14. Javascript - Web scraping](./0x14-javascript-web_scraping)
 * [0x15. Javascript - Web JQuery](./0x15-javascript-web_jquery)
 
-## Author
+## Author :black_nib:
 
 * **Brennan D Baraban** <[bdbaraban](https://github.com/bdbaraban)>
 
-## Acknowledgements
+## Acknowledgements :pray:
 
 All work contained in this project was completed as part of the curriculum for
 Holberton School. Holberton School is a campus-based full-stack software
@@ -42,5 +42,7 @@ using project-based peer learning. For more information, visit
 [this link](https://www.holbertonschool.com/).
 
 <p align="center">
-  <img src="http://www.holbertonschool.com/holberton-logo.png" alt="Holberton logo">
+  <img src="http://www.holbertonschool.com/holberton-logo.png"
+       alt="Holberton School logo"
+  >
 </p>
