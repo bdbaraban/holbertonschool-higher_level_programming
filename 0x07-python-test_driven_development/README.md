@@ -5,7 +5,8 @@ and `unittest` in Python.
 
 ## Tests :heavy_check_mark:
 
-* [tests](./tests): Folder containing the following independently-developed test files:
+* [tests](./tests): Folder of test files. Includes both Holberton-provided ones as well as the
+following eight independently-developed:
   * [0-add_integer.txt](./tests/0-add_integer.txt)
   * [2-matrix_divided.txt](./tests/2-matrix_divided.txt)
   * [3-say_my_name.txt](./tests/3-say_my_name.txt)
